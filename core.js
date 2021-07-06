@@ -78,8 +78,8 @@ logImage.prototype.turnImageData2Str = function (imageData) {
             str += this.darkFill;
           }
         }
-        resolve(str);
       }
+      resolve(str);
     } catch (err) {
       reject({ message: "call turnImageData2Str error.", ...err });
     }
