@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>console的乐趣1-图片转字符串轮廓输出</title>
+    <script src="./core.js"></script>
+</head>
+
+<body>
+    <canvas id="canvas"></canvas>
+    <pre class="res" style="transform: scale(.4);transform-origin: left top;"></pre>
+    <script>
+        let logImg = new logImage({
+            imagePath: "./sources/github-mark.png",
+            lightFill: "x", //明亮区域（yuv的y >= 190）填充内容
+            darkFill: " ", //幽暗区域填充内容
+        });
+        logImg.print().then((res) => {
+            document.querySelector(".res").innerHTML = res;
+        }).catch(err => {
+            console.log(err)
+        });
+    </script>
+</body>
+
+</html>
